@@ -11,6 +11,13 @@ const Container = styled.div`
   padding: 2.5rem;
   border-radius: 1rem;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+  && label {
+    font-size: 1rem;
+    color: #374151;
+    margin-bottom: 0.5rem;
+    display: block;
+    text-align: center;
+  }
 `;
 
 const Title = styled.h2`
@@ -78,10 +85,13 @@ const AddPet = () => {
       <form onSubmit={handleSubmit}>
         <Title>Doar um Pet</Title>
         <Input name="name" placeholder="Nome do pet" onChange={handleChange} required />
-        <Input name="age" placeholder="Idade" type="number" onChange={handleChange} required />
+        <Input name="age" placeholder="Idade" onChange={handleChange} required />
         <Input name="breed" placeholder="Raça" onChange={handleChange} required />
         <Input name="whatsapp" placeholder="WhatsApp para contato" onChange={handleChange} required />
+        <label htmlFor="">Foto</label>
         <Input name="image" type="file" accept="image/*" onChange={handleChange} required />
+        
+        
         <Button type="submit">Enviar</Button>
       </form>
     </Container>

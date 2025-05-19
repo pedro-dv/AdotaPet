@@ -26,15 +26,16 @@ router.get('/', async (req, res) => {
 
 // Criar pet
 router.post('/', authenticateToken, upload.single('image'), async (req, res) => {
-  const { name, age, breed } = req.body;
+  const { name, age, breed, whatsapp } = req.body;
   const image = req.file.filename;
 
   const pet = await prisma.pet.create({
     data: {
       name,
-      age: parseInt(age),
+      age,
       breed,
       image,
+      whatsapp,
       userId: req.user.id,
     },
   });

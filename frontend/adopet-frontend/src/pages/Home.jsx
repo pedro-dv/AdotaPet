@@ -75,6 +75,7 @@ const PetCard = styled.div`
 
 const Home = () => {
   const [pets, setPets] = useState([]);
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
     api.get('/pets').then((res) => setPets(res.data));
@@ -91,7 +92,9 @@ const Home = () => {
               <h3>{pet.name} ({pet.breed})</h3>
               <p>Idade: {pet.age}</p>
               {pet.adopted && <p className="adopted">Adotado</p>}
+             {token ? (
               <p>WhatsApp: {pet.whatsapp}</p>
+             ) : ("") } 
             </div>
           </PetCard>
         ))}

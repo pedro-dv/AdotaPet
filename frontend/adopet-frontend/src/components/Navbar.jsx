@@ -17,14 +17,23 @@ const Nav = styled.nav`
     &:hover {
       color: #3b82f6; /* azul vibrante */
     }
+    span {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
   }
 
   @media (max-width: 768px) {
-    flex-direction: column;
     gap: 0.75rem;
-
+    
     a {
       margin: 0.25rem 0;
+      display: flex;
+    }
+      span {
+      font-size: 1.5rem;
+      font-weight: bold;
+      display: flex;
     }
   }
 `;
@@ -40,14 +49,13 @@ const Navbar = () => {
 
   return (
     <Nav>
+        <Link to="/"><span>🐾 Adopet</span></Link>
       <div>
-        <Link to="/">Adopet</Link>
-        <Link to="/dashboard">Dashboard</Link>
-        <Link to="/add-pet">Doar Pet</Link>
-      </div>
-      <div>
-        {token ? (
+        {token ? (<>
+          <Link to="/dashboard">Dashboard</Link>
+          <Link to="/add-pet">Doar Pet</Link>
           <button onClick={logout}>Sair</button>
+          </>
         ) : (
           <>
             <Link to="/login">Login</Link>

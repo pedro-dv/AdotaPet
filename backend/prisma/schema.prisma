@@ -17,11 +17,11 @@ model User {
 model Pet {
   id        Int      @id @default(autoincrement())
   name      String
-  age       Int
+  age       String
   breed     String
   image     String
   adopted   Boolean  @default(false)
-  whatsapp  String @default("")
+  whatsapp  String 
   createdAt DateTime @default(now())
   user      User     @relation(fields: [userId], references: [id])
   userId    Int

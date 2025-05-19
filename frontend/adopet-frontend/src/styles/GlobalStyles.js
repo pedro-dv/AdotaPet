@@ -59,7 +59,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   ::selection {
-    background-color: #93c5fd;
+    background-color:hsl(212, 96.40%, 78.40%);
     color: #111827;
   }
 
