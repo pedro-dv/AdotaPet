@@ -17,6 +17,7 @@ const Register = () => {
       navigate('/login');
     } catch {
       toast.error('Erro ao registrar usuário');
+      console.error(error)
     }
   };
 
