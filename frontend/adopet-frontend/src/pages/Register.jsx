@@ -15,7 +15,7 @@ const Register = () => {
       await api.post('/users/register', form);
       toast.success('Usuário registrado com sucesso!');
       navigate('/login');
-    } catch {
+    } catch (error) {
       toast.error('Erro ao registrar usuário');
       console.error(error)
     }
